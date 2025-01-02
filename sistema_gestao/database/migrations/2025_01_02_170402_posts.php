@@ -13,17 +13,16 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('ID');
-            $table->unsignedBigInteger('author_id'); // Relaciona com o ID do autor na tabela de usuários
+            $table->unsignedBigInteger('author_id');
             $table->dateTime('date');
+            $table->dateTime('date_expire');
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('type');
             $table->text('content');
             $table->string('status')->default('draft'); // Status do post (draft, published, etc.)
-            $table->integer('menu_order')->default(0); // Ordem do menu
+            $table->integer('menu_order')->default(0);
             $table->timestamps();
-
-            // Definir a chave estrangeira
             $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
         });
 
