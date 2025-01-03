@@ -9,13 +9,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('post_meta', function (Blueprint $table) {
-            $table->bigIncrements('meta_id'); // ID do metadado
-            $table->unsignedBigInteger('post_id'); // ID do post
-            $table->string('meta_key'); // Chave do metadado
-            $table->text('meta_value')->nullable(); // Valor do metadado
+            $table->bigIncrements('meta_id');
+            $table->unsignedBigInteger('post_id');
+            $table->string('meta_key');
+            $table->text('meta_value')->nullable();
             $table->timestamps();
-
-            // Chave estrangeira
             $table->foreign('post_id')->references('ID')->on('posts')->onDelete('cascade');
         });
     }

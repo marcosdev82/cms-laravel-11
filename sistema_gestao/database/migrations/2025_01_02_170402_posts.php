@@ -19,8 +19,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('type');
-            $table->text('content');
+            $table->longText('content');
+            $table->string('excerpt');
             $table->string('status')->default('draft'); // Status do post (draft, published, etc.)
+            $table->integer('parent')->default(0);
+            $table->integer('restrict')->default(0);
             $table->integer('menu_order')->default(0);
             $table->timestamps();
             $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
