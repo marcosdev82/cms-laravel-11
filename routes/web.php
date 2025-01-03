@@ -9,8 +9,16 @@ Route::get('/', function () {
     return view('index');
 });
 
-// // Rota para exibir a lista de cursos
-Route::get('/index-course', [CourseController::class, 'index'])->name('courses.index');
+// Rotas cursos
+Route::get('/index-course', [CourseController::class, 'index']);
+Route::get('/show-course', [CourseController::class, 'show']);
+Route::get('/create-course', [CourseController::class, 'create']);
+Route::get('/store-course', [CourseController::class, 'store']);
+Route::get('/edit-course', [CourseController::class, 'edit']);
+Route::get('/udpate-course', [CourseController::class, 'udpate']);
+Route::get('/destroy-course', [CourseController::class, 'destroy']);
 
-// Rota para exibir a lista de posts (ajustada para um método diferente)
+
+// Rotas posts
 Route::get('/index-post', [PostController::class, 'showPosts'])->name('post.index');
+
