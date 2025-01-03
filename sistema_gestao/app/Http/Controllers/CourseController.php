@@ -6,8 +6,14 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    // Listar os cursos
-    public function index() {
-        dd("Listar");
+    /**
+     * Exibir a lista de cursos.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function index()
+    {
+        // Você pode adicionar lógica para buscar cursos no banco de dados aqui, se necessário.
+        return view('courses.index');
     }
 }
