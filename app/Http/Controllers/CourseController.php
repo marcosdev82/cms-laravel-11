@@ -13,7 +13,39 @@ class CourseController extends Controller
      */
     public function index()
     {
-        // Você pode adicionar lógica para buscar cursos no banco de dados aqui, se necessário.
         return view('courses.index');
     }
+
+    public function show()
+    {
+        return view('courses.show');
+    }
+
+    public function create()
+    {
+        return view('courses.create');
+    }
+
+    public function store()
+    {
+        dd('Cadastrar');
+    }
+
+    public function edit()
+    {
+        return view('courses.edit');
+    }
+
+    public function update()
+    {
+        dd('Atualizar');
+    }
+
+    public function destroy()
+    {
+        dd('Excluir');
+    }
+
+
+
 }

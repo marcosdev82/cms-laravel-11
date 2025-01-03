@@ -20,5 +20,5 @@ Route::get('/destroy-course', [CourseController::class, 'destroy']);
 
 
 // Rotas posts
-Route::get('/index-post', [PostController::class, 'showPosts'])->name('post.index');
+Route::get('/index-post', [PostController::class, 'showPosts']);
 
