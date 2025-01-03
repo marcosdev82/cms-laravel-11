@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h2>Criar curso</h2>
+    <h2>Cadastrar curso</h2>
 </body>
 
 </html>
