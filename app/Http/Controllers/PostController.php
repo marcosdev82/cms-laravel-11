@@ -31,15 +31,16 @@ class PostController extends Controller
     {
         // dd($request);
 
-        Post::create([
+        // Criação do novo post
+        $post = Post::create([
             'title' => $request->title,
-            'author_id' => 1,
+            'author_id' => 1, // Você pode ajustar isso para o ID do autor atual
             'date' => now(),
-            'date_expire' => now(),
-            'slug' => '',
-            'type' => 'post',
-            'content' => '',
-            'excerpt' => '',
+            'date_expire' => $request->date_expire ?: now(), // Se não for fornecido, usa a data atual
+            'slug' => $request->slug ?: '', // Se slug não for fornecido, usa uma string vazia
+            'type' => $request->type,
+            'content' => $request->content ?: '',
+            'excerpt' => $request->excerpt ?: '',
         ]);
 
         return redirect()->route('post.create')->with('success', 'Post cadastrado com sucesso!');

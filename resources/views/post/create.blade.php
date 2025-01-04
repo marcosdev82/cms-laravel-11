@@ -9,12 +9,54 @@
         </p>
     @endif
 
-    <form action="{{ route('post.store') }}" method="POST">
-        @csrf
-        @method('POST')
+    <!DOCTYPE html>
+    <html lang="pt-BR">
 
-        <label for="title"> Nome: </label>
-        <input type="text" name="title" id="title" placeholder="Título do post" value="{{ old('title') }}" required>
-        <button type="submit">Cadastrar</button>
-    </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Criar Post</title>
+    </head>
+
+    <body>
+
+        <div class="container mt-5">
+            <h2>Criar Novo Post</h2>
+            <form action="{{ route('post.store') }}" method="POST">
+                @csrf
+                @method('POST')
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Título:</label>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Título do post"
+                        value="{{ old('title') }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="slug" class="form-label">Slug:</label>
+                    <input type="text" name="slug" id="slug" class="form-control" placeholder="Slug do post"
+                        value="{{ old('slug') }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="date_expire" class="form-label">Data de Expiração:</label>
+                    <input type="datetime-local" name="date_expire" id="date_expire" class="form-control"
+                        value="{{ old('date_expire') }}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label">Tipo:</label>
+                    <input type="text" name="type" id="type" class="form-control" placeholder="Tipo do post"
+                        value="{{ old('type') }}" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Criar Post</button>
+            </form>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+    </html>
 @endsection
