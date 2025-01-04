@@ -12,9 +12,9 @@ Route::get('/', function () {
 // Rotas cursos
 Route::get('/index-course', [CourseController::class, 'index'])->name('course.index');
 Route::get('/show-course', [CourseController::class, 'show'])->name('course.show');
-Route::get('/store-course', [CourseController::class, 'store']);
+Route::post('/store-course', [CourseController::class, 'store'])->name('course.store');
 Route::get('/edit-course', [CourseController::class, 'edit'])->name('course.edit');
-Route::post('/create-course', [CourseController::class, 'create'])->name('course.create');
+Route::get('/create-course', [CourseController::class, 'create'])->name('course.create');
 Route::put('/udpate-course', [CourseController::class, 'udpate']);
 Route::delete('/destroy-course', [CourseController::class, 'destroy']);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
@@ -26,9 +27,14 @@ class CourseController extends Controller
         return view('course.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        dd('Cadastrar');
+        // dd($request);
+        Course::create([
+            'name' => $request->name
+        ]);
+
+        return redirect()->route('course.create')->width('success', 'Curso cadastrado com sucesso!');
     }
 
     public function edit()
