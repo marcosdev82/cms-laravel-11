@@ -11,7 +11,7 @@ Route::get('/', function () {
 
 // Rotas cursos
 Route::get('/index-course', [CourseController::class, 'index']);
-Route::get('/show-course', [CourseController::class, 'show']);
+Route::get('/show-course', [CourseController::class, 'show'])->name('courses.show');
 Route::get('/store-course', [CourseController::class, 'store']);
 Route::get('/edit-course', [CourseController::class, 'edit']);
 Route::post('/create-course', [CourseController::class, 'create']);
