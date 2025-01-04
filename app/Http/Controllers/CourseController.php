@@ -13,17 +13,17 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('courses.index');
+        return view('course.index');
     }
 
     public function show()
     {
-        return view('courses.show');
+        return view('course.show');
     }
 
     public function create()
     {
-        return view('courses.create');
+        return view('course.create');
     }
 
     public function store()
@@ -33,7 +33,7 @@ class CourseController extends Controller
 
     public function edit()
     {
-        return view('courses.edit');
+        return view('course.edit');
     }
 
     public function update()
