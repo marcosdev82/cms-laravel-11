@@ -20,5 +20,11 @@ Route::delete('/destroy-course', [CourseController::class, 'destroy']);
 
 
 // Rotas posts
-Route::get('/index-post', [PostController::class, 'showPosts']);
+Route::get('/index-post', [PostController::class, 'showPosts'])->name('post.index');
+Route::get('/show-post', [PostController::class, 'show'])->name('post.show');
+Route::post('/store-post', [PostController::class, 'store'])->name('post.store');
+Route::get('/edit-post', [PostController::class, 'edit'])->name('post.edit');
+Route::get('/create-post', [PostController::class, 'create'])->name('post.create');
+Route::put('/udpate-post', [PostController::class, 'udpate']);
+Route::delete('/destroy-post', [PostController::class, 'destroy']);
 

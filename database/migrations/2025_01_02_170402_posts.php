@@ -15,20 +15,21 @@ return new class extends Migration
             $table->bigIncrements('ID');
             $table->unsignedBigInteger('author_id');
             $table->dateTime('date');
-            $table->dateTime('date_expire');
+            $table->dateTime('date_expire')->nullable();
             $table->string('title');
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->nullable();
             $table->string('type');
-            $table->longText('content');
-            $table->string('excerpt');
-            $table->string('status')->default('draft'); // Status do post (draft, published, etc.)
+            $table->longText('content')->nullable();
+            $table->string('excerpt')->nullable();
+            $table->string('status')->default('draft'); // public | pending | draft | future | private | trash
             $table->integer('parent')->default(0);
+            $table->integer('view_count')->default(0);
             $table->integer('restrict')->default(0);
+            $table->string('password')->nullable();
             $table->integer('menu_order')->default(0);
             $table->timestamps();
             $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
         });
-
     }
 
     /**

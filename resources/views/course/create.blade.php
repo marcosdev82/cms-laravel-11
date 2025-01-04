@@ -2,6 +2,13 @@
 @section('content')
     <h2>Cadastrar curso</h2><br><br>
     <a href="{{ route('course.index') }}">Listar</a>
+
+    @if (session('success'))
+        <p style="color: green;">
+            {{ session('success') }}
+        </p>
+    @endif
+
     <form action="{{ route('course.store') }}" method="POST">
         @csrf
         @method('POST')

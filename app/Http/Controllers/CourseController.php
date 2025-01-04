@@ -34,7 +34,7 @@ class CourseController extends Controller
             'name' => $request->name
         ]);
 
-        return redirect()->route('course.create')->width('success', 'Curso cadastrado com sucesso!');
+        return redirect()->route('course.create')->with('success', 'Curso cadastrado com sucesso!');
     }
 
     public function edit()
