@@ -12,14 +12,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
-    {
-        return view('post.index');
-    }
-
     public function showPosts()
     {
-        return view('post.show');
+        // $posts = Post::get();
+        $posts = Post::paginate(3);
+
+        return view('post.index', ['posts' => $posts]);
     }
 
     public function create()

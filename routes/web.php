@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
 
 // Rota de teste inicial
@@ -27,4 +28,13 @@ Route::get('/edit-post', [PostController::class, 'edit'])->name('post.edit');
 Route::get('/create-post', [PostController::class, 'create'])->name('post.create');
 Route::put('/udpate-post', [PostController::class, 'udpate']);
 Route::delete('/destroy-post', [PostController::class, 'destroy']);
+
+// Rotas terms
+Route::get('/index-term', [TermController::class, 'showTerms'])->name('term.index');
+Route::get('/show-term', [TermController::class, 'show'])->name('term.show');
+Route::post('/store-term', [TermController::class, 'store'])->name('term.store');
+Route::get('/edit-term', [TermController::class, 'edit'])->name('term.edit');
+Route::get('/create-term', [TermController::class, 'create'])->name('term.create');
+Route::put('/udpate-term', [TermController::class, 'udpate'])->name('term.update');
+Route::delete('/destroy-term', [TermController::class, 'destroy']);
 

@@ -14,7 +14,10 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('course.index');
+        // $courses = Course::get();
+        $courses = Course::paginate(3);
+
+        return view('course.index', ['courses' => $courses]);
     }
 
     public function show()

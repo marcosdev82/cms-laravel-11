@@ -1,3 +1,19 @@
-<div>
-    <!-- Act only according to that maxim whereby you can, at the same time, will that it should become a universal law. - Immanuel Kant -->
-</div>
+@extends('layouts.admin')
+
+@section('content')
+    <h2>Listar os posts</h2>
+    <a href="{{ route('post.show') }}">Visualizar</a>
+    <a href="{{ route('post.create') }}">Cadastrar</a><br><br>
+
+    @forelse ($posts as $post)
+        {{ $post->ID }}<br>
+        {{ $post->title }}<br>
+        {{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y H:i:s') }}<br>
+        {{ \Carbon\Carbon::parse($post->updated_at)->format('d/m/Y H:i:s') }}<br>
+        <hr>
+    @empty
+        <p style="color:red">Nenhum post encontrado!</p>
+    @endforelse
+
+    {{ $posts->links() }}
+@endsection
