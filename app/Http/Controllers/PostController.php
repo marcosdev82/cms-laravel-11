@@ -66,7 +66,7 @@ class PostController extends Controller
             'post_parent' => $request->post_parent ?: 0,
             'guid' => $request->guid ?: '',
             'menu_order' => $request->menu_order ?: 0,
-            'post_type' => $type,
+            'post_type' => $this->type,
             'post_mime_type' => $request->post_mime_type ?: '',
             'comment_count' => $request->comment_count ?: 0,
         ]);
