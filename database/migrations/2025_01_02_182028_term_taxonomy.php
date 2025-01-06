@@ -12,9 +12,10 @@ return new class extends Migration
             $table->bigIncrements('term_taxonomy_id');
             $table->unsignedBigInteger('term_id');
             $table->string('taxonomy');
-            $table->text('description')->nullable();
+            $table->longText('description')->nullable();
+            $table->integer('parent')->default(0);
+            $table->integer('count')->default(0);
             $table->timestamps();
-
             // Chave estrangeira
             $table->foreign('term_id')->references('term_id')->on('terms')->onDelete('cascade');
         });

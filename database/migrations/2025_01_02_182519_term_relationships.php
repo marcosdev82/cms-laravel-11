@@ -11,6 +11,7 @@ return new class extends Migration
         Schema::create('term_relationships', function (Blueprint $table) {
             $table->unsignedBigInteger('object_id');
             $table->unsignedBigInteger('term_taxonomy_id');
+            $table->integer('term_order');
 
             // Chaves estrangeiras
             $table->foreign('object_id')->references('ID')->on('posts')->onDelete('cascade');
