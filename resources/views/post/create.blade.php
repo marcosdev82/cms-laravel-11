@@ -28,9 +28,9 @@
                 @method('POST')
 
                 <div class="mb-3">
-                    <label for="title" class="form-label">Título:</label>
-                    <input type="text" name="title" id="title" class="form-control" placeholder="Título do post"
-                        value="{{ old('title') }}" required>
+                    <label for="post_title" class="form-label">Título:</label>
+                    <input type="text" name="post_title" id="post_title" class="form-control"
+                        placeholder="Título do post" value="{{ old('post_title') }}" required>
                 </div>
 
                 <div class="mb-3">
@@ -46,8 +46,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="type" class="form-label">Tipo:</label>
-                    <input type="text" name="type" id="type" class="form-control" placeholder="Tipo do post"
+                    <label for="post_type" class="form-label">Tipo:</label>
+                    <input type="text" name="post_type" id="post_type" class="form-control" placeholder="Tipo do post"
                         value="{{ old('type') }}" required>
                 </div>
 

@@ -7,7 +7,7 @@
 
     @forelse ($posts as $post)
         {{ $post->ID }}<br>
-        {{ $post->title }}<br>
+        {{ $post->post_title }}<br>
         {{ \Carbon\Carbon::parse($post->created_at)->format('d/m/Y H:i:s') }}<br>
         {{ \Carbon\Carbon::parse($post->updated_at)->format('d/m/Y H:i:s') }}<br>
         <hr>

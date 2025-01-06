@@ -19,34 +19,44 @@ class Post extends Model
     public $incrementing = true;
 
     // Se a chave primária é do tipo string
-    protected $keyType = 'int';
+    // protected $keyType = 'bigint'; // 'bigint' é o tipo correto para Eloquent
 
     // Definindo os atributos que podem ser preenchidos em massa
     protected $fillable = [
-        'author_id',
-        'date',
-        'date_expire',
-        'title',
-        'slug',
-        'type',
-        'content',
-        'excerpt',
-        'status',
-        'parent',
-        'restrict',
+        'post_author',
+        'post_date',
+        'post_date_gmt',
+        'post_title',
+        'post_excerpt',
+        'post_status',
+        'comment_status',
+        'ping_status',
+        'post_password',
+        'to_ping',
+        'pinged',
+        'post_modified',
+        'post_modified_gmt',
+        'post_content_filtered',
+        'post_parent',
+        'guid',
         'menu_order',
+        'post_type',
+        'post_mime_type',
+        'comment_count',
     ];
 
     // Definindo os atributos que devem ser tratados como data
     protected $dates = [
-        'date',
-        'date_expire',
+        'post_date',
+        'post_date_gmt',
+        'post_modified',
+        'post_modified_gmt',
     ];
 
     // Definindo os relacionamentos
     public function author()
     {
-        return $this->belongsTo(User::class, 'author_id');
+        return $this->belongsTo(User::class, 'post_author');
     }
 
     // Adicione outros relacionamentos e métodos conforme necessário
