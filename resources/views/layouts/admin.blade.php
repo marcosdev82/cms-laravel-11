@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-sidenav-size="condensed">
 <!-- <html lang="en" data-layout="topnav"> -->
 
 <head>
@@ -17,6 +17,9 @@
 
     <!-- Icons css -->
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/material-design-icons-iconfont@6.7.0/dist/material-design-icons.min.css">
+
 
     <!-- App css -->
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" id="app-style" />
@@ -1181,6 +1184,7 @@
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/material-design-icons-iconfont@6.7.0/build/build.min.js"></script>
     <!-- Vendor js -->
     <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
     <!-- App js -->
