@@ -2,26 +2,24 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Term extends Model
 {
-    use HasFactory;
+    // Define a tabela associada
+    protected $table = 'terms';
 
-    // A tabela associada ao modelo
-    protected $table = 'terms'; // Use o nome da tabela correta
+    // Indique que não usa timestamps (created_at, updated_at)
+    public $timestamps = false;
 
-    // Os atributos que podem ser atribuídos em massa
-    protected $fillable = [
-        'name',
-        'slug',
-        'description',
-        'term_group',
-    ];
+    // Permite atribuição em massa
+    protected $fillable = ['name', 'slug', 'term_group'];
 
-    // Se você deseja usar timestamps
-    public $timestamps = true; // Isso é true por padrão
-
-    // Você pode adicionar métodos adicionais conforme necessário
+    /**
+     * Relacionamento com wp_term_taxonomy
+     */
+    public function taxonomy()
+    {
+        return $this->hasOne(TermTaxonomy::class, 'term_id', 'term_id');
+    }
 }
