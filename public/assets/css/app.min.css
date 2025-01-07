@@ -15297,7 +15297,7 @@ html[data-sidenav-size="hidden"]:not([data-layout="topnav"]) .page-content {
         background-color: rgba(var(--bs-primary-rgb), 0.15);
     }
     html[data-layout-mode="boxed"] .wrapper {
-        width: 90%;
+        width: 98%;
         margin: var(--bs-boxed-layout-gap) auto;
         overflow: hidden;
         background-color: var(--bs-body-bg);

@@ -773,115 +773,12 @@
                     </button>
 
                     <div class="d-none d-md-flex">
-                        <form class="app-search">
-                            <div class="app-search-box">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-icon" type="submit">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+
                     </div>
 
                     <!-- Mega Menu Dropdown -->
                     <div class="topbar-item d-none d-md-flex">
-                        <div class="dropdown">
-                            <a href=""
-                                class="topbar-link btn btn-link px-2 dropdown-toggle drop-arrow-none fw-medium"
-                                data-bs-toggle="dropdown" data-bs-trigger="hover" data-bs-offset="0,17"
-                                aria-haspopup="false" aria-expanded="false">
-                                Pages <i class="mdi mdi-chevron-down ms-1"></i>
-                            </a>
 
-                            <div class="dropdown-menu dropdown-menu-xxl p-0">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <div class="p-3">
-                                            <h5 class="mb-2 fw-semibold">UI Components</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="#!">Widgets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="ui-dropdowns.html">Dropdowns</a>
-                                                </li>
-                                                <li>
-                                                    <a href="extended-ratings.html">Ratings</a>
-                                                </li>
-                                                <li>
-                                                    <a href="extended-sweetalerts.html">Sweet Alerts</a>
-                                                </li>
-                                                <li>
-                                                    <a href="extended-scrollbar.html">Scrollbar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="form-range-slider.html">Range Slider</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="p-3">
-                                            <h5 class="mb-2 fw-semibold">Applications</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="apps-ecommerce-products.html">eCommerce Pages</a>
-                                                </li>
-                                                <li>
-                                                    <a href="apps-hospital-doctors.html">Hospital</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Email</a>
-                                                </li>
-                                                <li>
-                                                    <a href="apps-calendar.html">Calendar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="apps-kanban.html">Kanban Board</a>
-                                                </li>
-                                                <li>
-                                                    <a href="apps-invoices.html">Invoice Management</a>
-                                                </li>
-                                                <li>
-                                                    <a href="pages-pricing.html">Pricing</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4 bg-light bg-opacity-50">
-                                        <div class="p-3">
-                                            <h5 class="mb-2 fw-semibold">Extra Pages</h5>
-                                            <ul class="list-unstyled megamenu-list">
-                                                <li>
-                                                    <a href="javascript:void(0);">Left Sidebar with User</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Menu Collapsed</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">Small Left Sidebar</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">New Header Style</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);">My Account</a>
-                                                </li>
-                                                <li>
-                                                    <a href="pages-coming-soon.html">Maintenance & Coming Soon</a>
-                                                </li>
-                                            </ul>
-                                        </div> <!-- end .bg-light-->
-                                    </div> <!-- end col-->
-                                </div> <!-- end row-->
-                            </div> <!-- .dropdown-menu-->
-                        </div> <!-- .dropdown-->
                     </div> <!-- end topbar-item -->
                 </div>
 
@@ -1124,32 +1021,32 @@
                                 <img src="assets/images/users/avatar-1.jpg" width="32"
                                     class="rounded-circle me-lg-2 d-flex" alt="user-image">
                                 <span class="d-lg-flex flex-column gap-1 d-none">
-                                    <h6 class="my-0">Alex M.</h6>
+                                    <h6 class="my-0">Marcos Tavares.</h6>
                                 </span>
                                 <i class="mdi mdi-chevron-down d-none d-lg-block align-middle ms-2"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <div class="dropdown-header bg-primary mt-n3 rounded-top-2">
-                                    <h6 class="text-overflow text-white m-0">Welcome !</h6>
+                                    <h6 class="text-overflow text-white m-0">Bem vindo!</h6>
                                 </div>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-outline"></i>
-                                    <span>Profile</span>
+                                    <span>Perfil</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="mdi mdi-settings-outline"></i>
-                                    <span>Settings</span>
+                                    <span>Configurações</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="mdi mdi-lock-outline"></i>
-                                    <span>Lock Screen</span>
+                                    <span>Tela de bloqueio</span>
                                 </a>
 
                                 <div class="dropdown-divider"></div>
@@ -1157,7 +1054,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout-variant"></i>
-                                    <span>Logout</span>
+                                    <span>Sair</span>
                                 </a>
 
                             </div>
