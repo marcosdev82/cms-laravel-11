@@ -10,6 +10,16 @@ class RegisterTypes extends Controller
 {
     public function register(Request $request) {
 
+        $slug = preg_replace('/[^a-z0-9]+/', '-', strtolower($request->slug));
+        $slug = trim($slug, '-');
+
+        $originalSlug = $slug;
+        $count = 1;
+        while (Term::where('slug', $slug)->exists()) {
+            $slug = "{$originalSlug}-{$count}";
+            $count++;
+        }
+
         $defaults = [
             'label' => ucfirst($request->label),
             'slug' => $request->taxonomy,

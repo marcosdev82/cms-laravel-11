@@ -13,9 +13,18 @@ class RegisterTaxonomyCommand extends Command
 
     public function handle()
     {
-
         $label = ucfirst($this->argument('label'));
         $slug = $this->argument('taxonomy');
+
+        $slug = preg_replace('/[^a-z0-9]+/', '-', strtolower($slug));
+        $slug = trim($slug, '-');
+
+        $originalSlug = $slug;
+        $count = 1;
+        while (Term::where('slug', $slug)->exists()) {
+            $slug = "{$originalSlug}-{$count}";
+            $count++;
+        }
 
         $defaults = [
             'label' => $label,
@@ -40,7 +49,6 @@ class RegisterTaxonomyCommand extends Command
 
             $this->info("Taxonomia '{$slug}' cadastrada com sucesso!");
         } catch (\Exception $e) {
-            // Erro
             $this->error("Erro ao registrar a taxonomia '{$slug}': " . $e->getMessage());
         }
     }
