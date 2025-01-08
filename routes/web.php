@@ -5,6 +5,15 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
 
+// Route::get('/register-taxonomy', function () {
+//     $taxonomyService = new TaxonomyService();
+//     return $taxonomyService->registerTaxonomy('pessoas', 'post', [
+//         'label' => 'Pessoas',
+//         'slug' => 'pessoa',
+//     ]);
+// });
+
+
 // Rota de teste inicial
 Route::get('/', function () {
     return view('index');
@@ -18,7 +27,6 @@ Route::get('/edit-course', [CourseController::class, 'edit'])->name('course.edit
 Route::get('/create-course', [CourseController::class, 'create'])->name('course.create');
 Route::put('/udpate-course', [CourseController::class, 'udpate']);
 Route::delete('/destroy-course', [CourseController::class, 'destroy']);
-
 
 // Rotas posts
 Route::get('/index-post', [PostController::class, 'showPosts'])->name('post.index');
@@ -38,10 +46,9 @@ Route::get('/create-term', [TermController::class, 'create'])->name('term.create
 Route::put('/udpate-term', [TermController::class, 'udpate'])->name('term.update');
 Route::delete('/destroy-term', [TermController::class, 'destroy']);
 
-
 // Registro de taxonomia
 Route::get('/register-taxonomy', function () {
-    return registerTaxonomy('pessoas', 'post', [
+    return registerTaxonomy('Categoria', 'post', [
         'label' => 'Pessoas',
         'slug' => 'pessoa',
         'capabilities' => [
