@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class RegisterTypes extends Controller
 {
-    public function taxonomy(Request $request) {
+    public function register(Request $request) {
 
         $defaults = [
             'label' => ucfirst($request->label),
@@ -27,17 +27,24 @@ class RegisterTypes extends Controller
                 'term_group' => 0,
             ]);
 
-            TermTaxonomy::create([
-                'term_id' => $term->term_id,
-                'taxonomy' =>  $request->taxonomy,
-                'description' => $args['label'] . ' Taxonomy',
-                'parent' => 0,
-                'count' => 0,
-            ]);
+            // TermTaxonomy::create([
+            //     // 'term_id' => $term->term_id,
+            //     'taxonomy' =>  $request->taxonomy,
+            //     'description' => $args['label'] . ' Taxonomy',
+            //     'parent' => 0,
+            //     'count' => 0,
+            // ]);
 
             return "Taxonomia '{ $request->taxonomy}' registrada com sucesso!";
         } catch (\Exception $e) {
             return "Erro ao registrar a taxonomia '{ $request->taxonomy}': " . $e->getMessage();
         }
     }
+
+    public function create()
+    {
+        return view('taxonomy.create');
+    }
+
+
 }
