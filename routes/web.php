@@ -42,6 +42,7 @@ Route::delete('/destroy-term', [TermController::class, 'destroy']);
 // Registro de taxonomia
 Route::get('/create-taxonomy', [RegisterTypes::class, 'create'])->name('taxonomy.create');
 Route::post('/register-taxonomy', [RegisterTypes::class, 'register'])->name('taxonomy.register');
+Route::get('/edit-taxonomy', [RegisterTypes::class, 'edit'])->name('taxonomy.edit');
 
 // Route::get('/register-taxonomy', function () {
 //     return registerTaxonomy('Categoria', 'post', [

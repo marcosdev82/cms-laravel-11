@@ -16,7 +16,7 @@ class Term extends Model
     protected $fillable = ['name', 'slug', 'term_group'];
 
     /**
-     * Relacionamento com wp_term_taxonomy
+     * Relacionamento com term_taxonomy
      */
     public function taxonomy()
     {
