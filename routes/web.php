@@ -2,16 +2,9 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterTypes;
 use App\Http\Controllers\TermController;
 use Illuminate\Support\Facades\Route;
-
-// Route::get('/register-taxonomy', function () {
-//     $taxonomyService = new TaxonomyService();
-//     return $taxonomyService->registerTaxonomy('pessoas', 'post', [
-//         'label' => 'Pessoas',
-//         'slug' => 'pessoa',
-//     ]);
-// });
 
 
 // Rota de teste inicial
@@ -47,15 +40,19 @@ Route::put('/udpate-term', [TermController::class, 'udpate'])->name('term.update
 Route::delete('/destroy-term', [TermController::class, 'destroy']);
 
 // Registro de taxonomia
-Route::get('/register-taxonomy', function () {
-    return registerTaxonomy('Categoria', 'post', [
-        'label' => 'Pessoas',
-        'slug' => 'pessoa',
-        'capabilities' => [
-            'assign_terms' => 'edit_guides',
-            'edit_terms' => 'publish_guides',
-        ],
-    ]);
-});
+Route::post('/store-taxonomy', [RegisterTypes::class, 'store'])->name('taxonomy.store');
+
+
+
+// Route::get('/register-taxonomy', function () {
+//     return registerTaxonomy('Categoria', 'post', [
+//         'label' => 'Pessoas',
+//         'slug' => 'pessoa',
+//         'capabilities' => [
+//             'assign_terms' => 'edit_guides',
+//             'edit_terms' => 'publish_guides',
+//         ],
+//     ]);
+// });
 
 
