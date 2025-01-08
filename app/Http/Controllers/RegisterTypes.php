@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use function App\Repositories\registerTaxonomy;
 
-class RegisterTaxonomy extends Controller
+class RegisterTypes extends Controller
 {
-    public function registerTaxonomy() {
+    public function taxonomy() {
 
         return registerTaxonomy('Categoria', 'post', [
             'label' => 'Pessoas',
