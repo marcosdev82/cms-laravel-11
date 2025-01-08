@@ -38,3 +38,17 @@ Route::get('/create-term', [TermController::class, 'create'])->name('term.create
 Route::put('/udpate-term', [TermController::class, 'udpate'])->name('term.update');
 Route::delete('/destroy-term', [TermController::class, 'destroy']);
 
+
+// Registro de taxonomia
+Route::get('/register-taxonomy', function () {
+    return registerTaxonomy('pessoas', 'post', [
+        'label' => 'Pessoas',
+        'slug' => 'pessoa',
+        'capabilities' => [
+            'assign_terms' => 'edit_guides',
+            'edit_terms' => 'publish_guides',
+        ],
+    ]);
+});
+
+
