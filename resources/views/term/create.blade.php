@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <form action="{{ route('term.store') }}" method="POST">
+        <form action="{{ route('term.store') }}" id="meu-formulario" method="POST">
 
             <div class="row">
                 <div class="col col-md-6">
@@ -34,6 +34,7 @@
                             Featured
                         </div>
                         <div class="card-body">
+                            <div id="mensagem"></div>
                             <div class="mb-3">
                                 <label for="name" class="form-label">Term:</label>
                                 <input type="text" name="name" id="name" class="form-control form-control-sm"
@@ -89,6 +90,54 @@
 
     </form>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('meu-formulario');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault(); // Impede o envio padrão do formulário
+
+                const formData = new FormData(form); // Cria um objeto FormData
+
+                fetch("{{ route('inserir') }}", {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest', // Para indicar que é uma requisição AJAX
+                            'X-CSRF-TOKEN': document.querySelector('input[name="_token"]')
+                                .value // Adiciona o CSRF token
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erro na resposta da rede');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        document.getElementById('mensagem').innerHTML = '<p>' + data.success + '</p>';
+                        form.reset(); // Limpa o formulário
+                    })
+                    .catch(error => {
+                        if (error instanceof TypeError) {
+                            // Lida com erros de rede
+                            document.getElementById('mensagem').innerHTML =
+                                '<p style="color:red;">Erro de rede. Tente novamente.</p>';
+                        } else {
+                            // Lida com erros de validação
+                            return response.json().then(errData => {
+                                let errorMessages = '';
+                                Object.values(errData.errors).forEach(messages => {
+                                    errorMessages += messages.join('<br>') + '<br>';
+                                });
+                                document.getElementById('mensagem').innerHTML =
+                                    '<p style="color:red;">' + errorMessages + '</p>';
+                            });
+                        }
+                    });
+            });
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
