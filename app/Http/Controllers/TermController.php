@@ -23,8 +23,15 @@ class TermController extends Controller
 
     public function create()
     {
-        return view('term.create');
+
+        $terms = TermTaxonomy::where('taxonomy', 'eventos')
+        ->with('term') // Relacionamento com a tabela terms
+        ->get()
+        ->pluck('term'); // Retorna apenas os objetos relacionados aos termos
+
+        return view('term.create', compact('terms'));
     }
+
 
     public function store(Request $request)
     {
@@ -60,15 +67,15 @@ class TermController extends Controller
                 'term_group' => $request->term_group ?: 1,
             ]);
 
-            // Obter o ID do termo pai, se fornecido
-            // $parentId = $request->has('parent_id') ? $request->parent_id : 0;
+
+            $parentId = $request->term_id ? $request->term_id : 0;
 
             // Criar a taxonomia associando o termo ao parent (caso haja)
             TermTaxonomy::create([
                 'term_id' => $term->id,
                 'taxonomy' => 'eventos',
                 'description' => $defaults['label'] . ' Taxonomy',
-                'parent' => 0,
+                'parent' => $parentId,
                 'count' => 0,
             ]);
 
@@ -95,4 +102,6 @@ class TermController extends Controller
     {
         dd('Excluir');
     }
+
+    /** OBTER CATEGORIAS */
 }
