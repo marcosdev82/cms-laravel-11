@@ -64,7 +64,7 @@
                                 </select>
                             </div>
 
-                            {{-- <button type="submit" class="btn btn-primary">Criar term</button> --}}
+                            <button type="submit" class="btn btn-primary">Criar term</button>
                         </div>
 
 
@@ -90,7 +90,7 @@
 
     </form>
     </div>
-    <script>
+    {{-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('meu-formulario');
 
@@ -137,7 +137,7 @@
                     });
             });
         });
-    </script>
+    </script> --}}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
